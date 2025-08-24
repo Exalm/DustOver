@@ -1,0 +1,105 @@
+/* Box sizing для всех элементов */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Убираем отступы и поля у ключевых элементов */
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Убираем список маркеры */
+ul, ol {
+  list-style: none;
+}
+
+/* Базовые настройки для body */
+body {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  background: white;
+  color: black;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ссылки без стандартного оформления */
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Изображения и медиа */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Формы и кнопки */
+input, button, textarea, select {
+  font: inherit;
+  margin: 0;
+}
+
+/* Убираем стандартные outline и добавим собственное на фокусе, если нужно */
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Таблицы */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr; /* одна колонка на узких экранах */
+  grid-template-rows: auto;
+  gap: 4rem; /* вертикальные отступы между блоками */
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main, .home-section, .about-section {
+  position: relative;
+  z-index: 1;
+}
+
+
+@media (min-width: 768px) {
+  .main {
+    grid-template-columns: repeat(12, 1fr); /* 12 колонок */
+    gap: 3rem;
+  }
+
+  .home-section {
+    grid-column: 1 / 13; /* занять все 12 колонок по ширине */
+  }
+
+  .about-section {
+    grid-column: 3 / 11; /* от 3 до 10 включительно */
+  }
+
+  .services-section {
+    grid-column: 3 / 11; /* от 3 до 10, как и about-section */
+  }
+}
+
+/* Внутренний контейнер для центровки на разной ширине */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 720px;
+}

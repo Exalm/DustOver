@@ -1,0 +1,123 @@
+/* Основные стили секции */
+#services {
+  background-color: #f9f9f9; /* светлый фон */
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  border-radius: var(--border-radius);
+}
+
+/* Контейнер для центрирования и ограничения ширины */
+#services .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Заголовок раздела */
+#services h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+/* Описание под заголовком */
+#services > .container > p {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #666;
+  margin-bottom: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Список услуг - флекс-контейнер */
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Элемент услуги */
+.service-item {
+  background: white;
+  flex: 1 1 calc(25% - 30px); /* четыре колонки с отступом */
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.08);
+  border-radius: 12px;
+  padding: 30px 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.service-item:hover,
+.service-item:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+}
+
+/* Иконки (через классы service-icon-*) */
+.service-item.service-icon-webdev::before,
+.service-item.service-icon-design::before,
+.service-item.service-icon-seo::before,
+.service-item.service-icon-support::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Пример иконок — тут подставьте свои ссылки на изображения или SVG */
+.service-icon-webdev::before {
+  background-image: url('icons/webdev.svg');
+}
+
+.service-icon-design::before {
+  background-image: url('icons/design.svg');
+}
+
+.service-icon-seo::before {
+  background-image: url('icons/seo.svg');
+}
+
+.service-icon-support::before {
+  background-image: url('icons/support.svg');
+}
+
+/* Название услуги */
+.service-item h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+/* Текст описания */
+.service-item p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Адаптивность для планшетов и мобильных */
+@media (max-width: 1024px) {
+  .service-item {
+    flex: 1 1 calc(50% - 30px); /* две колонки */
+  }
+}
+
+@media (max-width: 600px) {
+  .service-item {
+    flex: 1 1 100%; /* одна колонка */
+  }
+}

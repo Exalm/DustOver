@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dustover — Студия веб-разработки</title>
+
+<link rel="stylesheet" href="./css/root.css">
+<link rel="stylesheet" href="./css/styles.css">
+<link rel="stylesheet" href="./css/header.css">
+<link rel="stylesheet" href="./css/home.css">
+<link rel="stylesheet" href="./css/about.css">
+<link rel="stylesheet" href="./css/particles.css">
+<link rel="stylesheet" href="./css/services.css">
+</head>
+<body class="site-wrapper">
+  <div id="particles-js"></div>
+
+<header>
+  <div class="container">
+    <div class="header__inner">
+      <div class="logo"><img src="./image/логотип.jpg" width="64px" height="64px" alt="" srcset=""></div>
+    <nav aria-label="Основное меню">
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 2rem;">
+        <li><a href="#home-section" style="text-decoration: none; color: #374151; font-weight: 600;">Главная</a></li>
+        <li><a href="#about" style="text-decoration: none; color: #374151; font-weight: 600;">О нас</a></li>
+        <li><a href="#services" style="text-decoration: none; color: #374151; font-weight: 600;">Услуги</a></li>
+        <li><a href="#portfolio" style="text-decoration: none; color: #374151; font-weight: 600;">Портфолио</a></li>
+        <li><a href="#contact" style="text-decoration: none; color: #374151; font-weight: 600;">Контакты</a></li>
+      </ul>
+    </nav>
+    </div>
+  </div>
+</header>
+
+  <!-- Главная -->
+  <main id="main" class="main" role="main">
+    <section class="home-section" id="home-section" aria-label="Главная">
+      <div class="content-wrapper">
+        <h1>Добро пожаловать в студию Dustover</h1>
+        <p>Мы создаем уникальные и современные решения в области веб-разработки.</p>
+        <a href="#services" class="btn-primary">Узнать больше об услугах</a>
+      </div>
+    </section>
+
+    <!-- О нас -->
+    <section id="about" class="about-section" aria-label="О нас" role="region" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title" class="glitch" data-text="О НАС" aria-describedby="about-subtitle">О НАС</h2>
+        <p id="about-subtitle" class="intro-text" role="doc-subtitle" aria-level="3">
+          Dustover — команда профессионалов, создающая инновационные, смелые и технически продвинутые веб-решения.
+          <strong>Мы разбиваем стандарты</strong>, чтобы вывести ваш бизнес на новый уровень.
+        </p>
+        <ul class="about-features" role="list" aria-label="Преимущества Dustover">
+          <li><span class="icon" aria-hidden="true">⚡</span> Экспертность в передовых технологиях</li>
+          <li><span class="icon" aria-hidden="true">🎯</span> Индивидуальный подход и глубокий анализ</li>
+          <li><span class="icon" aria-hidden="true">🔥</span> Фокус на максимальную производительность и UX</li>
+          <li><span class="icon" aria-hidden="true">⚙️</span> Поддержка и сопровождение проектов любой сложности</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Услуги -->
+    <section id="services" class="services-section" aria-label="Услуги">
+      <div class="container">
+        <h2>Наши услуги</h2>
+        <p>Мы предлагаем широкий спектр услуг, чтобы помочь вашему бизнесу расти и развиваться в цифровом мире.</p>
+        <ul class="services-list" role="list">
+          <li class="service-item service-icon-webdev">
+            <h3>Веб-разработка</h3>
+            <p>Современные, адаптивные и функциональные сайты и приложения.</p>
+          </li>
+          <li class="service-item service-icon-design">
+            <h3>Дизайн и UX</h3>
+            <p>Уникальный дизайн и удобный пользовательский опыт.</p>
+          </li>
+          <li class="service-item service-icon-seo">
+            <h3>SEO и маркетинг</h3>
+            <p>Повышение видимости и эффективные маркетинговые стратегии.</p>
+          </li>
+          <li class="service-item service-icon-support">
+            <h3>Поддержка и сопровождение</h3>
+            <p>Надежная техническая поддержка и обновления.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+
+<footer>
+  <p>© 2025 Dustover. Все права защищены.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="./js/particles.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* ---- О нас (light theme) ---- */
+#about {
+  background-color: #f9f9f9; /* светлый фон как в #services */
+  color: #333; /* тёмный текст */
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  outline: none;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+}
+
+/* Заголовок */
+#about h2.glitch {
+  position: relative;
+  font-size: 2.8rem; /* аналогично h2 в #services */
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #222;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  user-select: none;
+  /* отключаем glitch-эффект или делаем его более лёгким */
+}
+
+/* Уберём громоздкий glitch эффект, сделаем лёгкий тень */
+/* Если хотите сохранить glitch, можно слегка поменять цвета */
+#about h2.glitch::before,
+#about h2.glitch::after {
+  content: none;
+}
+
+/* Подзаголовок */
+#about .intro-text {
+  font-size: 1.1rem; /* как в описании #services */
+  font-weight: 400;
+  color: #555;
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+
+/* Список преимуществ */
+.about-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+/* Каждый элемент списка - карточка, похожая на услуги */
+.about-features li {
+  background: white;
+  flex: 1 1 calc(48% - 20px); /* две колонки */
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.08);
+  border-radius: 12px;
+  padding: 20px 25px;
+  position: relative;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+}
+
+/* Иконка */
+.about-features li .icon {
+  font-size: 28px;
+  margin-right: 15px;
+  user-select: none;
+  pointer-events: none;
+  flex-shrink: 0;
+  color: #0078d7; /* яркий акцентный цвет */
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .about-features li {
+    flex: 1 1 100%;
+  }
+  #about h2.glitch {
+    font-size: 2.4rem;
+  }
+  #about .intro-text {
+    font-size: 1rem;
+  }
+}

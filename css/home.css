@@ -1,0 +1,127 @@
+.home-section {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 3rem 7rem;
+  background: #fafafa;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  position: relative;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.home-section:hover {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Убрал тяжелые inset тени, сложные градиенты и яркие свечения */
+/* Подсветки ::before и ::after можно не использовать или сделать очень лёгкими */
+/* Если нужны — сделайте полупрозрачные светлые тени или градиенты, но без красных явно выраженных */
+
+/* Контент обёртка */
+.home-section .content-wrapper {
+  max-width: 780px;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Заголовок */
+.home-section h1 {
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  color: #222;
+  user-select: none;
+  text-shadow: none;
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.home-section h1:hover {
+  color: #e30613;
+  text-decoration: underline 3px solid #e30613;
+  text-underline-offset: 6px;
+}
+
+/* Абзац */
+.home-section p {
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  color: #555;
+  letter-spacing: 0.01em;
+  font-style: normal;
+  text-align: center;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.home-section p:hover {
+  color: #333;
+}
+
+/* Кнопка */
+.home-section .btn-primary {
+  background: linear-gradient(145deg, #f9f9f9 0%, #e2e2e2 100%);
+  color: #b30000;
+  padding: 1.6rem 3.2rem;
+  border-radius: 1.2rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  box-shadow: 0 8px 24px rgba(179, 0, 0, 0.3);
+  text-decoration: none;
+  display: inline-block;
+  user-select: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: none;
+  transition:
+    background 0.4s ease,
+    color 0.3s ease,
+    box-shadow 0.4s ease,
+    transform 0.3s ease;
+}
+
+.home-section .btn-primary:hover,
+.home-section .btn-primary:focus {
+  background: linear-gradient(135deg, #e30613 0%, #b10000 100%);
+  color: #fff;
+  box-shadow: 0 14px 40px rgba(227, 6, 19, 0.6);
+  transform: translateY(-6px) scale(1.05);
+  outline: none;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .home-section {
+    padding: 4rem 2rem 5rem;
+  }
+  
+  .home-section h1 {
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+  }
+  
+  .home-section p {
+    font-size: 1.1rem;
+    max-width: 90%;
+    margin-bottom: 2rem;
+  }
+  
+  .home-section .btn-primary {
+    padding: 1.2rem 2.8rem;
+    font-size: 1.1rem;
+  }
+}
