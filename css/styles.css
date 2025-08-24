@@ -63,9 +63,8 @@ table {
 }
 
 .main {
-  display: grid;
-  grid-template-columns: 1fr; /* одна колонка на узких экранах */
-  grid-template-rows: auto;
+  display: flex;
+  flex-direction: column;
   gap: 4rem; /* вертикальные отступы между блоками */
   padding: 2rem;
   max-width: 1200px;
