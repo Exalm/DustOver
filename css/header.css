@@ -1,15 +1,15 @@
-/* === Header основной контейнер === */
+/* Header */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
 
-  background: linear-gradient(90deg, rgba(38, 97, 224, 0.45), rgba(102, 51, 153, 0.45));
-  backdrop-filter: saturate(160%) blur(10px);
-  -webkit-backdrop-filter: saturate(160%) blur(10px);
+  background: linear-gradient(90deg, rgba(80, 80, 80, 0.45), rgba(130, 130, 130, 0.45));
+  backdrop-filter: saturate(100%) blur(10px);
+  -webkit-backdrop-filter: saturate(100%) blur(10px);
 
-  border-bottom: 2px solid rgba(179, 157, 219, 0.4);
-  box-shadow: 0 4px 12px rgba(103, 58, 183, 0.12);
+  border-bottom: 2px solid rgba(150, 150, 150, 0.4);
+  box-shadow: 0 4px 12px rgba(70, 70, 70, 0.12);
 
   padding: 0.6rem 0;
   transition: box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
@@ -20,15 +20,15 @@ header {
   will-change: backdrop-filter, background-color, box-shadow;
 }
 
-/* === Состояние при прокрутке (scrolled) === */
+/* Header on scroll */
 header.scrolled {
-  background: linear-gradient(90deg, rgba(38, 97, 224, 0.6), rgba(102, 51, 153, 0.6));
-  border-color: rgba(103, 58, 183, 0.6);
-  box-shadow: 0 6px 22px rgba(103, 58, 183, 0.25);
+  background: linear-gradient(90deg, rgba(50, 50, 50, 0.7), rgba(100, 100, 100, 0.7));
+  border-color: rgba(100, 100, 100, 0.7);
+  box-shadow: 0 6px 22px rgba(100, 100, 100, 0.25);
   transform: translateZ(0);
 }
 
-/* === Внутренний контейнер хэдера === */
+/* Inner header */
 .header__inner {
   width: 100%;
   max-width: 1300px;
@@ -41,40 +41,24 @@ header.scrolled {
   position: relative;
 }
 
-/* === Логотип стиль === */
-.logo {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
-  outline-offset: 4px;
-  transition: transform 0.25s ease, filter 0.3s ease;
-  border-radius: 50px;
-  overflow: hidden;
-  will-change: transform, filter;
-}
+/* Logo */
 .logo img {
   max-height: 3.6rem;
   border-radius: 50px;
-  transition: box-shadow 0.35s ease, filter 0.3s ease;
-  will-change: box-shadow, filter;
-}
-.logo:hover,
-.logo:focus {
-  filter: brightness(1.15) saturate(1.25);
-  transform: scale(1.07);
-  outline: none;
-  box-shadow:
-    0 0 15px 2px rgba(255, 140, 220, 0.6),
-    0 4px 18px rgba(170, 60, 180, 0.7);
-}
-.logo:active {
-  transform: scale(1.03);
-  filter: brightness(1.05) saturate(1.1);
-  transition: transform 0.1s ease;
+  filter: grayscale(100%) brightness(85%);
+  transition: filter 0.3s ease, box-shadow 0.35s ease;
 }
 
-/* === Навигация - основная === */
+.logo:hover,
+.logo:focus {
+  filter: none;
+  transform: none;
+  outline: none;
+  box-shadow: none;
+}
+
+
+/* Navigation */
 nav {
   max-width: 1100px;
   margin: 0 auto;
@@ -92,46 +76,41 @@ nav {
   will-change: padding, gap;
 }
 
-/* === Ссылки навигации === */
+/* Navigation links */
 nav a {
   position: relative;
   text-decoration: none;
-  color: #c8c6e6;
+  color: #ddd;
   font-weight: 600;
   font-size: 1.05rem;
   letter-spacing: 0.04em;
   padding: 0.3rem 0;
   border-bottom: 3px solid transparent;
-  transition:
-    border-color 0.3s ease,
-    color 0.3s ease,
-    transform 0.25s ease,
-    text-shadow 0.3s ease;
+  transition: border-color 0.3s ease, color 0.3s ease, transform 0.25s ease, text-shadow 0.3s ease;
   user-select: none;
   cursor: pointer;
   outline-offset: 3px;
 }
 
-/* Псевдоэлемент свечения при hover */
+/* Glow on hover/focus */
 nav a::before {
   content: '';
   position: absolute;
   inset: 0;
-  box-shadow: inset 0 0 6px rgba(255 255 255 / 0.4);
+  box-shadow: inset 0 0 6px rgba(255 255 255 / 0.15);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
   border-radius: 4px;
 }
 
-/* Простое подсвечивание и масштаб */
 nav a:hover,
 nav a:focus {
-  color: #9a83ff; /* светло-фиолетовый приглушенный */
-  border-bottom-color: #9a83ff;
+  color: #aaa;
+  border-bottom-color: #aaa;
   outline: none;
   transform: scale(1.12);
-  text-shadow: 0 0 8px rgba(154, 131, 255, 0.68);
+  text-shadow: 0 0 6px rgba(170, 170, 170, 0.6);
 }
 
 nav a:active {
@@ -139,9 +118,7 @@ nav a:active {
   transition: transform 0.1s ease;
 }
 
-/* === Дополнительные эффекты для ссылок === */
-
-/* Подчеркивание двигающееся */
+/* Underline animation */
 nav a::after {
   content: '';
   position: absolute;
@@ -149,7 +126,7 @@ nav a::after {
   left: 50%;
   width: 0;
   height: 4px;
-  background: linear-gradient(90deg, transparent, #9a83ff, transparent);
+  background: linear-gradient(90deg, transparent, #aaa, transparent);
   border-radius: 3px;
   transform: translateX(-50%);
   transition: width 0.3s ease;
@@ -163,256 +140,11 @@ nav a:focus::after {
   opacity: 1;
 }
 
-/* Цветной фоновый переход при фокусе */
+/* Focus visible */
 nav a:focus-visible {
   outline: none;
-  box-shadow: 0 0 18px #9a83ffaa;
+  box-shadow: 0 0 12px #aaa7;
   border-radius: 5px;
-  background: rgba(154, 131, 255, 0.12);
+  background: rgba(170, 170, 170, 0.12);
   transition: background 0.3s ease, box-shadow 0.4s ease;
 }
-
-/* === Адаптивное меню с hamburger кнопкой === */
-.menu-toggle {
-  display: none;
-  cursor: pointer;
-  width: 36px;
-  height: 36px;
-  position: relative;
-  transition: transform 0.3s ease;
-  z-index: 2000;
-}
-
-.menu-toggle span,
-.menu-toggle span::before,
-.menu-toggle span::after {
-  display: block;
-  background-color: #b49fff;
-  height: 3.6px;
-  border-radius: 3px;
-  position: absolute;
-  width: 100%;
-  transition: transform 0.3s ease, top 0.3s ease, opacity 0.3s ease;
-}
-
-.menu-toggle span {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.menu-toggle span::before {
-  content: '';
-  top: -10px;
-}
-
-.menu-toggle span::after {
-  content: '';
-  top: 10px;
-}
-
-.menu-toggle.active span {
-  background-color: transparent;
-}
-
-.menu-toggle.active span::before {
-  top: 0;
-  transform: rotate(45deg);
-}
-
-.menu-toggle.active span::after {
-  top: 0;
-  transform: rotate(-45deg);
-}
-
-/* === Мобильная адаптация меню и навигации === */
-@media (max-width: 1024px) {
-  nav {
-    max-width: 100%;
-    padding: 0.9rem 1.5rem;
-    gap: 2rem;
-  }
-}
-
-/* Мобайл: Меню переходит в колоночный вид */
-@media (max-width: 768px) {
-  header {
-    padding: 0.5rem 0;
-    border-bottom-width: 1.5px;
-  }
-
-  nav {
-    position: fixed;
-    top: 4.8rem;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 4.8rem);
-    background: linear-gradient(135deg, rgba(38, 97, 224, 0.9), rgba(102, 51, 153, 0.9));
-    backdrop-filter: saturate(180%) blur(16px);
-    -webkit-backdrop-filter: saturate(180%) blur(16px);
-    flex-direction: column;
-    gap: 2.6rem;
-    padding: 2rem 0;
-    transform: translateY(-150%);
-    opacity: 0;
-    transition:
-      transform 0.45s cubic-bezier(0.55, 0, 0.1, 1),
-      opacity 0.45s ease;
-    z-index: 1500;
-    overflow-y: auto;
-  }
-
-  nav.open {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  nav a {
-    font-size: 1.3rem;
-    text-align: center;
-    padding: 0.8rem 0;
-    border-bottom: none;
-    border-radius: 0;
-  }
-
-  nav a:hover,
-  nav a:focus {
-    transform: scale(1.1);
-    border-bottom: none;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-/* === Стили для disabled и aria-disabled === */
-nav a[aria-disabled="true"],
-nav a.disabled {
-  pointer-events: none;
-  opacity: 0.35;
-  cursor: default;
-  color: #8888aa;
-  border-bottom-color: transparent;
-  transform: none !important;
-  box-shadow: none !important;
-  user-select: none;
-}
-
-/* === Переключатели цвета и адаптивности шрифтов === */
-@media (max-width: 480px) {
-  nav a {
-    font-size: 1.15rem;
-    padding: 0.65rem 0;
-  }
-
-  .logo img {
-    max-height: 3rem;
-  }
-}
-
-/* === Различные микровзаимодействия с мышью и клавиатурой === */
-nav a:focus-visible {
-  outline: 3px solid #aa84ffdd;
-  outline-offset: 2px;
-  box-shadow: 0 0 10px #aa84ffcc;
-  border-radius: 6px;
-}
-
-/* === Скрытый текст для экранных читалок в меню === */
-.visually-hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
-/* === Плавные transition свойства для часто обновляемых свойств */
-* {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 0.3s;
-  will-change: transform, opacity, background-color, color, box-shadow;
-}
-
-/* === Дополнительные тени для повышения глубины === */
-header::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 100%;
-  height: 12px;
-  background: linear-gradient(to bottom, rgba(103, 58, 183, 0.08), transparent 80%);
-  pointer-events: none;
-  border-radius: 0 0 20px 20px;
-  filter: blur(8px);
-  z-index: 0;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-/* При scroll активируется усиление тени */
-header.scrolled::after {
-  background: linear-gradient(to bottom, rgba(103, 58, 183, 0.15), transparent 70%);
-  opacity: 1;
-}
-
-/* === Тонкие линии подсветок вокруг ссылок === */
-nav a::selection {
-  background: #a484ff55;
-  color: #4b006e;
-}
-
-/* === Медленные pulsing анимации для подсветки === */
-@keyframes pulseGlow {
-  0% {
-    box-shadow: 0 0 6px rgba(154, 131, 255, 0.45);
-  }
-  50% {
-    box-shadow: 0 0 18px rgba(154, 131, 255, 0.7);
-  }
-  100% {
-    box-shadow: 0 0 6px rgba(154, 131, 255, 0.45);
-  }
-}
-
-/* Применение к ссылка при focus-visible */
-nav a:focus-visible {
-  animation: pulseGlow 2.4s ease infinite;
-}
-
-/* === Дополнительные медиазапросы для сверхмалых экранов === */
-@media (max-width: 360px) {
-  .header__inner {
-    padding: 0 1rem;
-  }
-
-  nav a {
-    font-size: 1rem;
-    letter-spacing: 0.03em;
-  }
-
-  .menu-toggle {
-    width: 32px;
-    height: 32px;
-  }
-
-  .logo img {
-    max-height: 2.8rem;
-  }
-}
-
-/* === Дополнительные декоративные псевдоэлементы внутри навигации для интерактива */
-/* Светлая подсветка при hover на все nav links кроме активного */
-/* Например, эффект подсветки соседних ссылок чтение курсором */
-nav a:hover ~ a,
-nav a:hover ~ a:hover {
-  filter: brightness(0.9);
-  transition: filter 0.3s ease;
-}
-
-/* === Закончено с расширенными стилями header и nav === */
